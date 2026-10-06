@@ -1,142 +1,432 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Novaliel | Em breve</title>
-  <meta name="description" content="O site da Novaliel está sendo construído. Fale com a gente pelo e-mail.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A Novaliel cria agentes de IA que atendem clientes no WhatsApp, automatizam tarefas e cuidam das redes sociais de pequenos negócios.">
+<meta property="og:title" content="Novaliel · Automação com IA">
+<meta property="og:description" content="Agentes de IA que atendem, organizam e vendem por você, 24 horas.">
+<meta property="og:url" content="https://novaliel.com/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#05060B">
+<link rel="canonical" href="https://novaliel.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23FFE9C7'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23FF8F5A' stroke-width='2'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Novaliel","url":"https://novaliel.com/","email":"gabrielaurelio@novaliel.com","description":"Agentes de IA e automação para pequenos negócios."}</script>
+<title>Novaliel · Automação com IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: página única no espaço profundo; a supernova explode no topo e cada seção é um "anel" de luz que se afasta do núcleo. */
+:root{
+  --void:#05060B; --deep:#0B0E17; --panel:#111522; --line:#232A3B; --line-2:#36405A;
+  --star:#F4F1EA; --text:#E7EAF2; --muted:#9AA3B8;
+  --core:#FFE9C7; --shock:#FF8F5A; --nebula:#3CC9BE; --ember:#FF5B3A;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--void);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--shock);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
+@media (max-width:640px){.wrap{padding-inline:16px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15.5px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn.primary{background:var(--shock);color:#1A0B04;box-shadow:0 0 0 0 rgba(255,143,90,.0)}
+.btn.primary:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(255,143,90,.35)}
+.btn.ghost{border-color:var(--line-2);color:var(--text);background:rgba(255,255,255,.02)}
+.btn.ghost:hover{border-color:var(--star)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--nebula)}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance}
+h2{font-weight:780;font-stretch:78%;font-size:clamp(32px,4.4vw,52px);line-height:1.02;margin:10px 0 14px}
+h3{font-weight:720;font-stretch:90%;font-size:21px;line-height:1.2}
+.lead{color:var(--muted);font-size:17.5px;max-width:60ch;margin:0}
+section{padding-block:96px;scroll-margin-top:64px}
+@media (max-width:640px){section{padding-block:68px}}
 
-  <!-- Ícone da aba: uma estrela desenhada em SVG, sem precisar de arquivo de imagem -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23151A3C'/><circle cx='16' cy='16' r='5' fill='%23FFF3CF'/></svg>">
+/* navegação */
+.nav{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:rgba(5,6,11,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:800;font-stretch:118%;letter-spacing:.06em;font-size:18px}
+.logo i{width:12px;height:12px;border-radius:50%;background:var(--core);box-shadow:0 0 10px 3px rgba(255,233,199,.7),0 0 24px 8px rgba(255,143,90,.45)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-size:14.5px;font-weight:500}
+.nav ul a:hover{color:var(--text)}
+.nav .btn{padding:9px 16px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}.nav .btn{margin-left:auto}}
 
-  <!-- Fonte: Bricolage Grotesque, do Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet">
+/* hero */
+.hero{position:relative;padding-block:0;min-height:min(820px,100svh);display:flex;align-items:center;overflow:hidden;isolation:isolate}
+#cosmos{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(to bottom,transparent,var(--void));z-index:-1}
+.hero .wrap{padding-block:110px 120px;width:100%}
+.hero h1{font-weight:800;font-stretch:70%;font-size:clamp(46px,8.4vw,108px);line-height:.92;letter-spacing:-.01em;max-width:11.5ch;margin:16px 0 22px}
+.hero h1 em{font-style:normal;color:var(--core);text-shadow:0 0 28px rgba(255,143,90,.55)}
+.hero .lead{font-size:19px;color:#C4CADA;max-width:52ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .note{margin-top:16px;font-size:13.5px;color:var(--muted)}
 
-  <style>
-    /* Cores do site. Mude aqui e o site inteiro muda junto. */
-    :root {
-      --noite: #151A3C;        /* fundo: céu de noite */
-      --horizonte: #343A74;    /* azul mais claro, perto do horizonte */
-      --aurora: #F4C9A4;       /* luz do amanhecer */
-      --estrela: #FFF3CF;      /* brilho da estrela */
-      --texto: #E9EAF6;        /* texto principal */
-      --texto-suave: #A7ADD6;  /* texto secundário */
-    }
+/* faixa de ferramentas */
+.tools{border-block:1px solid var(--line);padding-block:22px;background:var(--deep)}
+.tools .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;justify-content:center}
+.tools span{font-family:var(--f-display);font-stretch:95%;font-weight:650;font-size:17px;color:#7E879C;white-space:nowrap}
+.tools .lbl{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;width:100%;text-align:center}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+/* serviços */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+@media (max-width:900px){.grid3{grid-template-columns:1fr}}
+.card{position:relative;background:linear-gradient(180deg,var(--panel),var(--deep));border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;overflow:hidden}
+.card::before{content:"";position:absolute;width:220px;height:220px;right:-90px;top:-90px;border-radius:50%;background:radial-gradient(circle,var(--glow,rgba(255,143,90,.22)),transparent 70%)}
+.card.teal{--glow:rgba(60,201,190,.22)}
+.card .tag{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.card p{margin:0;color:var(--muted)}
+.card ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
+.card li{display:flex;gap:10px}
+.card li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--shock)}
+.card.teal li::before{background:var(--nebula)}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: clamp(24px, 6vw, 72px);
-      font-family: "Bricolage Grotesque", system-ui, sans-serif;
-      color: var(--texto);
-      background-color: var(--noite);
-      /* Céu de madrugada: escuro em cima, clareando embaixo */
-      background-image:
-        radial-gradient(120% 55% at 50% 118%, rgba(244, 201, 164, 0.32), transparent 62%),
-        linear-gradient(to bottom, var(--noite) 40%, var(--horizonte) 100%);
-    }
+/* espectro */
+.spectrum{margin-top:40px;background:var(--deep);border:1px solid var(--line);border-radius:18px;padding:30px}
+.track{position:relative;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--nebula),var(--core) 50%,var(--shock));margin:8px 0 26px}
+.spectrum input[type=range]{width:100%;margin:0;accent-color:var(--shock)}
+.spec-ends{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:8px}
+.spec-out{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:26px;margin-top:22px;align-items:start}
+@media (max-width:760px){.spec-out{grid-template-columns:1fr}}
+.spec-out h3{font-size:26px}
+.spec-out p{margin:6px 0 0;color:var(--muted)}
+.spec-out .ex{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:15px}
+.spec-out .ex b{display:block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--nebula);margin-bottom:6px;font-weight:500}
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: 44rem;
-    }
+/* vitrine (a própria Novaliel) */
+.showcase{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
+@media (max-width:900px){.showcase{grid-template-columns:1fr}}
+.orbit{position:relative;aspect-ratio:1;max-width:460px;width:100%;margin-inline:auto}
+.orbit .ring{position:absolute;inset:0;border-radius:50%;border:1px dashed var(--line-2)}
+.orbit .ring.r2{inset:16%}
+.orbit .ring.r3{inset:33%;border-style:solid;border-color:rgba(255,143,90,.35)}
+.orbit .core{position:absolute;inset:41%;border-radius:50%;background:radial-gradient(circle,var(--core),var(--shock) 55%,transparent 72%);box-shadow:0 0 60px 20px rgba(255,143,90,.25)}
+.orbit .node{position:absolute;transform:translate(-50%,-50%);background:var(--panel);border:1px solid var(--line-2);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;white-space:nowrap}
+.orbit .node.a{border-color:var(--shock);color:var(--core)}
+.orbit .node.n{border-color:var(--nebula);color:#BFF3EE}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0}
+.stats div{border-top:1px solid var(--line-2);padding-top:10px}
+.stats b{display:block;font-family:var(--f-display);font-stretch:75%;font-weight:800;font-size:44px;line-height:1;color:var(--star)}
+.stats span{font-size:13.5px;color:var(--muted)}
 
-    /* O nome da marca, bem grande */
-    .marca {
-      font-size: clamp(3.5rem, 15vw, 9.5rem);
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
+/* como funciona */
+.steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;border-top:2px solid var(--line-2);padding-top:16px;min-width:0}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font-family:var(--f-display);font-stretch:70%;font-weight:800;font-size:44px;line-height:1;color:var(--shock);margin-bottom:10px}
+.steps p{margin:6px 0 0;color:var(--muted);font-size:15px}
 
-    /* O "i" sem pingo: o pingo é a estrela */
-    .i { position: relative; }
+/* casos */
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+@media (max-width:900px){.cases{grid-template-columns:1fr}}
+.case{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--deep);display:flex;flex-direction:column;gap:12px}
+.case .who{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--nebula)}
+.case .before,.case .after{font-size:15px;margin:0}
+.case .before{color:var(--muted)}
+.case .after{color:var(--text);border-left:2px solid var(--shock);padding-left:12px}
+.fine{font-size:13px;color:var(--muted);margin-top:16px}
 
-    .estrela {
-      position: absolute;
-      left: 50%;
-      top: 0.12em;
-      width: 0.11em;
-      height: 0.11em;
-      border-radius: 50%;
-      background: var(--estrela);
-      box-shadow:
-        0 0 0.06em var(--estrela),
-        0 0 0.3em rgba(255, 243, 207, 0.5);
-      transform: translateX(-50%);
-      animation: nova 2.2s ease-out 0.3s both;
-    }
+/* segurança */
+.secgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:40px}
+@media (max-width:900px){.secgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.secgrid{grid-template-columns:1fr}}
+.secgrid div{background:var(--deep);padding:22px}
+.secgrid b{display:block;font-family:var(--f-display);font-stretch:90%;font-size:18px;margin-bottom:4px}
+.secgrid p{margin:0;color:var(--muted);font-size:14.5px}
 
-    /* A estrela "acende" uma vez quando a página abre */
-    @keyframes nova {
-      0%   { opacity: 0; transform: translateX(-50%) scale(0.2); }
-      50%  { opacity: 1; transform: translateX(-50%) scale(1.7); }
-      100% { opacity: 1; transform: translateX(-50%) scale(1); }
-    }
+/* faq */
+.faq{margin-top:36px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-mono);color:var(--shock);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:10px 0 0;color:var(--muted);max-width:72ch}
 
-    .aviso {
-      margin-top: clamp(20px, 3vw, 32px);
-      font-size: clamp(1.5rem, 4vw, 2.25rem);
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
+/* cta final */
+.final{position:relative;text-align:center;overflow:hidden;isolation:isolate}
+.final::before{content:"";position:absolute;left:50%;top:50%;width:min(900px,140vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,233,199,.18),rgba(255,143,90,.12) 30%,rgba(60,201,190,.06) 55%,transparent 70%);z-index:-1}
+.final h2{font-size:clamp(40px,6.6vw,84px);font-stretch:70%;max-width:14ch;margin-inline:auto}
+.final .lead{margin-inline:auto}
+.final .cta-row{justify-content:center}
+.contact{margin-top:18px;font-size:14.5px;color:var(--muted)}
+.contact code{font-family:var(--f-mono);color:var(--text)}
 
-    .contato {
-      margin-top: 12px;
-      max-width: 34ch;
-      font-size: 1.0625rem;
-      line-height: 1.55;
-      color: var(--texto-suave);
-    }
-
-    a {
-      color: var(--estrela);
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
-    }
-    a:hover { color: var(--aurora); }
-    a:focus-visible {
-      outline: 2px solid var(--aurora);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    footer {
-      font-size: 0.875rem;
-      color: var(--texto-suave);
-    }
-
-    /* Para quem prefere menos movimento na tela */
-    @media (prefers-reduced-motion: reduce) {
-      .estrela { animation: none; }
-    }
-  </style>
+footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--muted)}
+.fgrid{display:grid;grid-template-columns:1.4fr repeat(3,minmax(0,1fr));gap:28px}
+@media (max-width:760px){.fgrid{grid-template-columns:1fr 1fr}}
+footer h4{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin:0 0 10px;font-weight:500}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--text)}
+.legal{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
 </head>
 <body>
 
-  <main>
-    <h1 class="marca" aria-label="Novaliel">
-      <span aria-hidden="true">noval<span class="i">ı<span class="estrela"></span></span>el</span>
-    </h1>
 
-    <p class="aviso">Em breve.</p>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Novaliel, início"><i></i>NOVALIEL</a>
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#exemplos">Exemplos</a></li>
+      <li><a href="#seguranca">Segurança</a></li>
+      <li><a href="#perguntas">Perguntas</a></li>
+    </ul>
+    <a class="btn primary js-wa" href="#contato">Falar no WhatsApp</a>
+  </div>
+</header>
 
-    <p class="contato">
-      Enquanto o site não fica pronto, fale com a gente em
-      <a href="mailto:contato@novaliel.com">gabrielaurelio@novaliel.com</a>
-    </p>
-  </main>
+<main id="topo">
+  <section class="hero" aria-labelledby="h-hero">
+    <canvas id="cosmos" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="eyebrow">Agentes de IA para pequenos negócios</span>
+      <h1 id="h-hero">Seu negócio funcionando <em>mesmo quando você para.</em></h1>
+      <p class="lead">A Novaliel cria agentes de inteligência artificial que atendem clientes no WhatsApp, organizam pedidos e cuidam das tarefas repetitivas. Você fica com o que só você sabe fazer.</p>
+      <div class="cta-row">
+        <a class="btn primary js-wa" href="#contato">Quero um diagnóstico grátis</a>
+        <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
+      </div>
+      <p class="note">Resposta em até 1 dia útil · sem compromisso</p>
+    </div>
+  </section>
 
-  <footer>© 2026 Novaliel</footer>
+  <div class="tools" aria-label="Ferramentas que conectamos">
+    <div class="wrap">
+      <span class="lbl">Conectamos o que você já usa</span>
+      <span>WhatsApp</span><span>Instagram</span><span>Google Planilhas</span><span>Gmail</span><span>Google Agenda</span><span>n8n</span><span>Hotmart</span>
+    </div>
+  </div>
+
+  <section id="servicos" aria-labelledby="h-serv">
+    <div class="wrap">
+      <span class="eyebrow">O que fazemos</span>
+      <h2 id="h-serv">Três frentes, um objetivo: tempo de volta para você.</h2>
+      <p class="lead">Cada projeto começa pelo problema do seu negócio, não pela ferramenta.</p>
+      <div class="grid3">
+        <article class="card">
+          <span class="tag">Atendimento</span>
+          <h3>Atendente de IA no WhatsApp</h3>
+          <p>Responde 24 horas com as informações certas do seu negócio e passa para uma pessoa quando precisa.</p>
+          <ul><li>Tira dúvidas, preços e horários</li><li>Agenda, anota pedidos e qualifica clientes</li><li>Avisa você do que é importante</li></ul>
+        </article>
+        <article class="card teal">
+          <span class="tag">Operação</span>
+          <h3>Automação de processos</h3>
+          <p>Liga suas ferramentas para as tarefas repetitivas acontecerem sozinhas, sem copiar e colar.</p>
+          <ul><li>Pedidos direto na planilha</li><li>Lembretes, cobranças e confirmações</li><li>Relatórios prontos toda semana</li></ul>
+        </article>
+        <article class="card">
+          <span class="tag">Divulgação</span>
+          <h3>Conteúdo e redes sociais</h3>
+          <p>Planejamento, criação e publicação de conteúdo com IA, para você aparecer sem ficar refém das redes.</p>
+          <ul><li>Calendário de posts do mês</li><li>Textos, artes e vídeos curtos</li><li>Publicação automática</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-spec" style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow">Do automático ao inteligente</span>
+      <h2 id="h-spec">Nem tudo precisa de IA. Nós usamos a dose certa.</h2>
+      <p class="lead">Regras fixas são baratas e nunca erram; agentes de IA entendem conversa e decidem. Arraste para ver onde cada um entra.</p>
+      <div class="spectrum">
+        <div class="track" aria-hidden="true"></div>
+        <label for="spec" class="eyebrow" style="color:var(--muted)">Nível de inteligência</label>
+        <input id="spec" type="range" min="0" max="2" step="1" value="1" aria-describedby="spec-titulo">
+        <div class="spec-ends"><span>Regra fixa</span><span>Agente de IA</span></div>
+        <div class="spec-out" aria-live="polite">
+          <div><h3 id="spec-titulo">Meio a meio</h3><p id="spec-txt"></p></div>
+          <div class="ex"><b>Exemplo</b><span id="spec-ex"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-show" style="background:var(--deep);border-block:1px solid var(--line)">
+    <div class="wrap showcase">
+      <div class="orbit" aria-hidden="true">
+        <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div><div class="core"></div>
+        <span class="node a" style="left:50%;top:33%">Alice · operações</span>
+        <span class="node n" style="left:50%;top:67%">Nova · qualidade</span>
+        <span class="node" style="left:16%;top:16%">Vendas</span>
+        <span class="node" style="left:84%;top:16%">Marketing</span>
+        <span class="node" style="left:2%;top:50%;transform:translate(0,-50%)">Atendimento</span>
+        <span class="node" style="left:98%;top:50%;transform:translate(-100%,-50%)">Financeiro</span>
+        <span class="node" style="left:16%;top:84%">Entregas</span>
+        <span class="node" style="left:84%;top:84%">Segurança</span>
+      </div>
+      <div>
+        <span class="eyebrow">Nós usamos o que vendemos</span>
+        <h2 id="h-show">A Novaliel é operada por uma equipe de agentes.</h2>
+        <p class="lead">Vendas, marketing, atendimento e financeiro rodam com agentes de IA organizados como uma empresa de verdade: com diretoria, gerentes, regras e auditoria. Você recebe a mesma estrutura, no tamanho do seu negócio.</p>
+        <div class="stats">
+          <div><b>52</b><span>cargos na estrutura</span></div>
+          <div><b>11</b><span>setores com gerente</span></div>
+          <div><b>24h</b><span>de atendimento</span></div>
+        </div>
+        <a class="btn ghost js-wa" href="#contato">Quero isso no meu negócio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" aria-labelledby="h-como">
+    <div class="wrap">
+      <span class="eyebrow">Como funciona</span>
+      <h2 id="h-como">Do primeiro papo ao agente trabalhando.</h2>
+      <ol class="steps">
+        <li><h3>Diagnóstico</h3><p>Uma conversa para entender seu processo e onde você perde mais tempo.</p></li>
+        <li><h3>Proposta</h3><p>Escopo claro: o que entra, o que não entra, prazo e preço fechado.</p></li>
+        <li><h3>Construção e testes</h3><p>Montamos e testamos com situações reais, inclusive mensagens difíceis, antes de ligar.</p></li>
+        <li><h3>Acompanhamento</h3><p>Ficamos junto nos primeiros 30 dias, ajustando com base nos números.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="exemplos" aria-labelledby="h-ex" style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow">Exemplos</span>
+      <h2 id="h-ex">O que dá para automatizar no seu tipo de negócio.</h2>
+      <div class="cases">
+        <article class="case"><span class="who">Lanchonete e delivery</span><h3>Pedidos sem fila no WhatsApp</h3><p class="before">Antes: alguém respondendo cardápio e anotando pedido à mão.</p><p class="after">Com agente: o cliente vê o cardápio, monta o pedido e ele cai pronto na planilha da cozinha.</p></article>
+        <article class="case"><span class="who">Clínica e salão</span><h3>Agenda que se preenche sozinha</h3><p class="before">Antes: horários marcados por mensagem e faltas sem aviso.</p><p class="after">Com agente: agendamento 24 h, confirmação no dia anterior e lista de espera automática.</p></article>
+        <article class="case"><span class="who">Loja e prestador de serviço</span><h3>Nenhum cliente esquecido</h3><p class="before">Antes: orçamentos que ninguém acompanhou e cobranças atrasadas.</p><p class="after">Com agente: follow-up no tempo certo, lembrete de pagamento e relatório semanal de vendas.</p></article>
+      </div>
+      <p class="fine">Cenários ilustrativos do que construímos. Cada projeto é desenhado para o seu processo.</p>
+    </div>
+  </section>
+
+  <section id="seguranca" aria-labelledby="h-seg" style="background:var(--deep);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <span class="eyebrow">Segurança e confiança</span>
+      <h2 id="h-seg">Automação com responsabilidade.</h2>
+      <p class="lead">As mesmas regras que usamos dentro da Novaliel valem para os agentes que entregamos.</p>
+      <div class="secgrid">
+        <div><b>LGPD desde o início</b><p>Coletamos só o necessário, com consentimento, e apagamos quando você pedir.</p></div>
+        <div><b>Pessoa sempre disponível</b><p>O cliente pode pedir para falar com um humano a qualquer momento.</p></div>
+        <div><b>API oficial do WhatsApp</b><p>Para reduzir o risco de bloqueio do seu número.</p></div>
+        <div><b>Acesso mínimo</b><p>Cada agente vê só o que precisa. Senhas ficam em cofre, nunca em mensagens.</p></div>
+        <div><b>Nada inventado</b><p>O agente responde só com as informações que você aprovou. Se não sabe, encaminha.</p></div>
+        <div><b>Você decide o que importa</b><p>Pagamentos, descontos e decisões grandes sempre passam por uma pessoa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="perguntas" aria-labelledby="h-faq">
+    <div class="wrap">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 id="h-faq">Antes de começar.</h2>
+      <div class="faq">
+        <details><summary>Preciso entender de tecnologia?</summary><p>Não. Você conta como seu negócio funciona; a gente constrói, testa e ensina a usar.</p></details>
+        <details><summary>A IA vai responder coisa errada para meus clientes?</summary><p>O agente só usa as informações que você aprovou. Quando a pergunta foge disso, ele avisa que vai verificar e passa para você.</p></details>
+        <details><summary>Quanto tempo leva?</summary><p>Depende do escopo. Projetos simples, como um atendente de perguntas frequentes, costumam ficar prontos em poucas semanas. O prazo exato vem na proposta.</p></details>
+        <details><summary>Quanto custa?</summary><p>O preço é fechado na proposta, depois do diagnóstico, que é gratuito. Você sabe exatamente o que vai receber antes de pagar.</p></details>
+        <details><summary>E se eu quiser mudar alguma coisa depois?</summary><p>Nos primeiros 30 dias fazemos os ajustes junto com você. Depois, mudanças novas viram uma proposta simples.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contato" aria-labelledby="h-final">
+    <div class="wrap">
+      <span class="eyebrow">Diagnóstico gratuito</span>
+      <h2 id="h-final">Da IA ao resultado, sem complicação.</h2>
+      <p class="lead">Conte em uma mensagem qual tarefa mais toma o seu tempo. A gente responde com uma ideia de como automatizar.</p>
+      <div class="cta-row">
+        <a class="btn primary js-wa" href="mailto:gabrielaurelio@novaliel.com?subject=Diagn%C3%B3stico%20gratuito">Falar no WhatsApp</a>
+        <a class="btn ghost" href="mailto:gabrielaurelio@novaliel.com?subject=Diagn%C3%B3stico%20gratuito">Enviar e-mail</a>
+      </div>
+      <p class="contact">E-mail: <code>gabrielaurelio@novaliel.com</code></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="logo" href="#topo"><i></i>NOVALIEL</a><p style="margin:12px 0 0;max-width:34ch">Agentes de IA e automação para pequenos negócios.</p></div>
+      <div><h4>Serviços</h4><ul><li><a href="#servicos">Atendente no WhatsApp</a></li><li><a href="#servicos">Automação de processos</a></li><li><a href="#servicos">Conteúdo e redes</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="#como-funciona">Como funciona</a></li><li><a href="#seguranca">Segurança</a></li><li><a href="#perguntas">Perguntas</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="mailto:gabrielaurelio@novaliel.com">gabrielaurelio@novaliel.com</a></li><li><a class="js-wa" href="#contato">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Novaliel. Todos os direitos reservados.</span><a href="privacidade.html">Política de Privacidade</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  /* ===== CONFIGURE AQUI: seu número de WhatsApp com DDI e DDD, só números (ex.: 5511999998888) ===== */
+  var WHATSAPP = "";
+  var MSG = "Olá! Vim pelo site da Novaliel e quero um diagnóstico gratuito.";
+  if (WHATSAPP) {
+    var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG);
+    document.querySelectorAll(".js-wa").forEach(function(a){ a.href = url; a.target = "_blank"; a.rel = "noopener"; });
+  } else {
+    document.querySelectorAll(".js-wa").forEach(function(a){ a.href = "mailto:gabrielaurelio@novaliel.com?subject=" + encodeURIComponent("Diagnóstico gratuito"); });
+  }
+
+  /* espectro */
+  var niveis = [
+    { t: "Regra fixa", d: "Automação sem IA: sempre faz a mesma coisa, custa quase nada e não erra.", e: "Todo pedido novo vira uma linha na planilha e manda um aviso para a cozinha." },
+    { t: "Meio a meio", d: "Regras fazem o trabalho pesado e a IA entra só onde precisa entender texto.", e: "A IA lê a mensagem do cliente e identifica o pedido; a regra registra, confirma e cobra." },
+    { t: "Agente de IA", d: "Conversa, entende contexto e decide dentro dos limites que você definiu.", e: "O atendente tira dúvidas, sugere produtos, agenda e chama você quando o assunto é delicado." }
+  ];
+  var r = document.getElementById("spec");
+  function upd(){ var n = niveis[+r.value]; document.getElementById("spec-titulo").textContent = n.t; document.getElementById("spec-txt").textContent = n.d; document.getElementById("spec-ex").textContent = n.e; r.setAttribute("aria-valuetext", n.t); }
+  r.addEventListener("input", upd); upd();
+
+  /* supernova */
+  var cv = document.getElementById("cosmos"), cx = cv.getContext("2d");
+  var reduz = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var W, H, dpr, stars = [], parts = [], t0 = performance.now();
+  function size(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    stars = []; var n = Math.round(W * H / 2600);
+    for (var i = 0; i < n; i++) stars.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.2 + .2, a: Math.random() * .7 + .2, p: Math.random() * 6.28 });
+    parts = []; for (var j = 0; j < 260; j++) parts.push({ ang: Math.random() * 6.28, v: .35 + Math.random() * .9, s: Math.random() * 1.6 + .4, hue: Math.random() });
+  }
+  function frame(now){
+    var t = reduz ? 6 : (now - t0) / 1000;
+    var cxp = W * (W < 760 ? .62 : .72), cyp = H * .42;
+    cx.clearRect(0, 0, W, H);
+    for (var i = 0; i < stars.length; i++) { var s = stars[i]; cx.globalAlpha = s.a * (.65 + .35 * Math.sin(t * 1.3 + s.p)); cx.fillStyle = "#F4F1EA"; cx.beginPath(); cx.arc(s.x, s.y, s.r, 0, 6.29); cx.fill(); }
+    cx.globalAlpha = 1;
+    var R = Math.min(W, H) * (W < 760 ? .55 : .62);
+    var cyc = (t % 14) / 14, prog = 1 - Math.pow(1 - Math.min(1, cyc * 1.25), 3);
+    var neb = cx.createRadialGradient(cxp, cyp, 0, cxp, cyp, R * 1.1);
+    neb.addColorStop(0, "rgba(255,233,199,.30)"); neb.addColorStop(.18, "rgba(255,143,90,.20)"); neb.addColorStop(.45, "rgba(60,201,190,.08)"); neb.addColorStop(1, "rgba(5,6,11,0)");
+    cx.fillStyle = neb; cx.fillRect(0, 0, W, H);
+    var shell = R * (.25 + .75 * prog);
+    cx.lineWidth = 2; cx.strokeStyle = "rgba(255,143,90," + (.55 * (1 - prog) + .08) + ")"; cx.beginPath(); cx.arc(cxp, cyp, shell, 0, 6.29); cx.stroke();
+    cx.strokeStyle = "rgba(60,201,190," + (.35 * (1 - prog) + .05) + ")"; cx.beginPath(); cx.arc(cxp, cyp, shell * .82, 0, 6.29); cx.stroke();
+    for (var k = 0; k < parts.length; k++) { var p = parts[k]; var d = shell * p.v; var x = cxp + Math.cos(p.ang) * d, y = cyp + Math.sin(p.ang) * d * .92;
+      cx.globalAlpha = .75 * (1 - prog * .7); cx.fillStyle = p.hue < .55 ? "#FF8F5A" : (p.hue < .8 ? "#FFE9C7" : "#3CC9BE"); cx.beginPath(); cx.arc(x, y, p.s, 0, 6.29); cx.fill(); }
+    cx.globalAlpha = 1;
+    var core = cx.createRadialGradient(cxp, cyp, 0, cxp, cyp, R * .16);
+    core.addColorStop(0, "rgba(255,255,255,1)"); core.addColorStop(.3, "rgba(255,233,199,.9)"); core.addColorStop(1, "rgba(255,143,90,0)");
+    cx.fillStyle = core; cx.beginPath(); cx.arc(cxp, cyp, R * .16, 0, 6.29); cx.fill();
+    if (!reduz) requestAnimationFrame(frame);
+  }
+  size(); requestAnimationFrame(frame);
+  window.addEventListener("resize", function(){ size(); if (reduz) requestAnimationFrame(frame); });
+})();
+</script>
 
 </body>
 </html>
